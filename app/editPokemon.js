@@ -5,8 +5,8 @@ import { usePokemon } from './context/pokemonContext.js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function EditPokemon() {
-  const { id } = useLocalSearchParams(); 
- 
+  const { id } = useLocalSearchParams(); // Get the ID from route parameters
+  const { pokemonList, setPokemonList } = usePokemon();
   const [pokemon, setPokemon] = useState(null);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
